@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Simulating the Spread of the Common Cold</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <!-- CSS only -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+</head>
+<body>
+
+<article class="container">
+    <header>
+        <h1>Simulating the Spread of the Common Cold</h1>
+        <p>by Gerald Saberon</p>
+        <small>May 27, 2022</small>
+    </header>
+
+    <br>
+    
+    <p>Common cold is an upper respiratory tract infection that affects the respiratory mucosa of the nose, throat and sinuses. Some of the symptoms of this disease include sneezing, runny nose, coughs, nasal congestion, sore or scratchy throat, general malaise and many more. Common cold infections can be caused by many viruses such as rhinovirus, adenovirus, enterovirus, and coronavirus with rhinovirus being the most common one.</p>
+    
+    <p>Each year, children suffer about 5 such infections and two to three infections for adults. This disease may not be as concerning or life threating as other diseases but the complications and inconveniences that come from it are not insignificant.</p>
+
+    <p>There are 3 main ways of how the common cold spreads from person to person, namely, hand-to-hand transfer, hand-to-surface-to-hand transfer and through aerosols. The transmission of the common cold infection through hand-to-hand and hand-to-surface-to-hand methods works when a person acquires the virus through hand to hand interaction with an infected person or interaction with objects contaminated with the virus and then with subsequent passage to the nostrils or eyes via self-inoculation. Humans are known to frequently touch their eyes and nose making transfer of the rhinovirus a likely possibility. Aerosol transmission can either be via small particle aerosols that transmit the virus through airflow or by large-particle aerosols such as saliva expelled during a sneeze or a cough.</p>
+
+    <p>In this article, we will utilize interactive simulations to demonstrate and visualize the spread of the common cold and will attempt to answer 2 questions: How fast does common cold spread across a population with no preventative measures/intervention and how it compares when there are preventative measures/intervention.</p>
+
+    <h2>Setup of the simulation</h2>
+    <p>The simulation is comprised of agents/people which are represented in the simulation as tiny silhouettes of a person. The simulation is interactive so you can alter the values for the amount of agents. Once the simulation has started, the agents will randomly roam around the simulation world encountering other agents.  At the start of the simulation one random agent is chosen to be infected with the common cold and will be colored red. This agent can be thought of as “sick” and is capable of spreading the virus to other agents. Other agents that are uninfected will be colored green. As the simulation runs, the randomly chosen infected agent spreads the virus to other agents through different transmission methods. When an uninfected agent acquires the virus, this agent will change its color from green to yellow indicating contamination with the virus. Though the yellow agents are infected or have acquired the virus, they are not yet considered sick and therefore cannot be capable of spreading the virus and are only seen as a “victim” of the spread of the virus from the sick agent.</p>
+
+    <h2>Properties of the Disease</h2>
+    <p>In the simulation, the disease spreads through three transmission methods: hand-to-hand, hand-to-surface, and via aerosol transmission.</p>
+    <ul>
+        <li>
+            <p>Hand-to-hand transmission occurs when two agents occupy the same patch or position in the simulation world. This simulates the interaction and direct contact between person to person.</p>
+        </li>
+        <li>
+            <p>With hand-to-surface-to-hand transmission, the simulation handles this by enabling an infected agent to deposit rhinovirus on patches to signify that an object on that patch is contaminated with the virus.</p>
+        </li>
+        <li>
+            <p>Aerosol transmission occurs when a person coughs or sneezes and droplets reaches and lands on another person’s nose and/or mouth. For simulating this transmission method, the simulation handles this similarly to hand-to-hand transmission where in order for transmission to occur, two agents occupy the same patch. This is because in order for aerosol transmission to be successful, two people need to be close together in order for the aerosol to reach the other person.
+    </ul>
+
+    <p>A hygiene variable will also be used to represent the preventative measures/interventions that an agent possesses. These preventative measures/interventions which we will call as the variable “hygiene” are techniques that one can perform in order to prevent infection/contamination and also for preventing further transmission of the virus. Examples of these techniques include handwashing, use of alcohol-based disinfectants, masks, etc. This hygiene value represents a scale from 0.00 to 1 on how much an agent performs and adheres to these preventative measures. The higher the values means that the agents often perform preventative measures which in turn lessens the spread of the virus.</p>
+
+    <br>
+    <p>Below is the interactive simulation that demonstrates the spread of a disease. Press "setup" to spawn agents, then press "go" to start the simulation. Press "setup" again to reset the simulation.</p>
+    <object class="netlogo-sim" type="text/html" data="common_cold_spread.html"></object>
+    
+
+    <h2>Discussion</h2>
+    <p>The hygiene variable influences the rate of transmission of the virus. Hygiene affects both the infected and the susceptible agents in the simulation. If hygiene is high, then the infected will be much more careful and follow proper preventative measure as to not further spread the virus. As for the uninfected agents, these agents will also be more careful about their surroundings and interaction with infected agents as to not acquire the virus. When hygiene is set to a high value closer to 1, the spread of the virus is slowed. When hygiene is set to a lower value closer to 0, then the virus spreads much faster and easily. As I ran the simulation with the hygiene variable set to 0.25, it took around 200 ticks for a single sick agent to infect half the population. On the other hand when hygiene is set to a higher variable say 0.75, the spread slowed down to 3 times slower than the previous 0.25 hygiene variable run. Overall, this simulation demonstrates how proper hygiene can slow down and possibly prevent the further spread of the common cold virus. </p>
+
+    <h2>Key Insights</h2>
+    <p>My insights from the simulations are as follows:</p>
+    <ul>
+        <li>
+            <p>In the simulations, even though there is only one sick person able to spread the disease, they are still able to many spread the virus to many people quickly when there are no preventative measures taken place.</p>
+        </li>
+        <li>
+            <p>That we can significantly slow down the spread of a virus if we just have to adhere and follow safety and preventative measure/interventions.</p>
+        </li>
+        <li>
+            <p>With simulations, we can make estimations on how much time it takes for a certain disease to spread across a population.</p>
+        </li>
+    </ul>
+
+    <br><hr>
+    <h2>References</h2>
+    <ul>
+        <li>Pappas, D.E., Hendley, J.O. (2009). Transmission of colds. In: Eccles, R., Weber, O. (eds) Common Cold. Birkhäuser Advances in Infectious Diseases. Birkhäuser Basel. https://doi.org/10.1007/978-3-7643-9912-2_8</li>
+        <li>Arroll B. (2011). Common cold. BMJ clinical evidence, 2011, 1510. https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3275147/</li>
+        <li>Allan, G. M., & Arroll, B. (2014). Prevention and treatment of the common cold: making sense of the evidence. CMAJ : Canadian Medical Association journal = journal de l'Association medicale canadienne, 186(3), 190–199. https://doi.org/10.1503/cmaj.121442</li>
+        <li>Turner R. B. (2015). The Common Cold. Mandell, Douglas, and Bennett's Principles and Practice of Infectious Diseases, 748–752.e2. https://doi.org/10.1016/B978-1-4557-4801-3.00058-8</li>
+    </ul>
+
+</article>
+
+<script type="text/javascript" src="main.js"></script>
+</body>
+</html>
